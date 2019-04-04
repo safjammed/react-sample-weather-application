@@ -3,22 +3,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTemperatureLow, faTemperatureHigh, faWater, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 const WeatherDetails = ({weatherData}) =>{
-    console.info(weatherData);
     let w = weatherData;
     if (!weatherData){
-        return "Loading...";
+        return "";
     }
     return (
-        <div className={"weatherDetails mw-"}>
-            <div className="card text-center">
+        <div className={"weatherDetails "}>
+            <div className="card text-center animated fadeIn">
                 <div className="card-body">
                     <div className="row">
                         <div className="col-12">
                             <FontAwesomeIcon icon={faMapMarkerAlt} className={"place-ico"} />
                             <p className="placename">{w.name}</p>
+                            <img className="weather-image" src={`http://openweathermap.org/img/w/${w.weather[0].icon}.png`} />
                             <h1>
-                                <span>{w.main.temp}&deg;</span>
-                                <img className="weather-image" src={`http://openweathermap.org/img/w/${w.weather[0].icon}.png`} />
+                                <span>{w.main.temp}&deg;C</span>
                             </h1>
 
                             <h4 className="card-title"> {w.weather[0].main}</h4>

@@ -5,12 +5,17 @@
     <link rel="stylesheet" href="/style/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
+      <script src="https://sarcadass.github.io/granim.js/assets/js/vendor/granim.min.js"></script>
   </head>
   <body>
+  <canvas id="canvas-basic"></canvas>
     <div class="container">
       <div class="app"></div>
+        <div class="footer text-center">
+            <p class="text-white text-bold animated tada">&copy; 2019 <a href="http://safjammed.com">Safayat Jamil</a>. Made with React</p>
+        </div>
     </div>
   </body>
   <script src="/bundle.js"></script>
+  <script>new Granim({element:"#canvas-basic",direction:"left-right",isPausedWhenNotInView:!0,states:{"default-state":{gradients:[["#ff9966","#ff5e62"],["#00F260","#0575E6"],["#e1eec3","#f05053"]]}}});</script>
 </html>

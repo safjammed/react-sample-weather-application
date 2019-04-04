@@ -24,7 +24,6 @@ class App extends Component{
         fetch(`https://nominatim.openstreetmap.org/search?q=${term}&format=json&limit=5`)
             .then(res => res.json())
             .then(resp => {
-                console.log("Places are",resp);
                 this.setState({
                     placeData:resp
                 });

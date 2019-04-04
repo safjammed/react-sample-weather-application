@@ -13,10 +13,10 @@ class SearchBar extends Component{
     render() {
         return (
             <div className='searchbar'>
-                <FontAwesomeIcon icon={faSearch} className={'searchbar-ico'} />
+                <FontAwesomeIcon icon={faSearch} className={'searchbar-ico animated fadeIn'} />
                 <input
                     placeholder={"New York, US"}
-                    className={"searchbar-input"}
+                    className={"searchbar-input animated fadeIn"}
                     value={this.state.term}
                     onChange={event => this.onChangeInput(event.target.value)}
                 />

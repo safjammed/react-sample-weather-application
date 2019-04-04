@@ -11,7 +11,7 @@ const SearchResult = ({places, onPlaceSelect}) => {
   });
   return (
       <div className="searchResults">
-          <ul className={"list-group"}>
+          <ul className={"list-group animated fadeIn"}>
               {searchResultItems}
           </ul>
       </div>
