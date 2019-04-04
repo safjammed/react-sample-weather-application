@@ -14,7 +14,8 @@ You will need nodejs for this project. Checkout this repo, install dependencies,
 > npm start
 ```
 
-###Credits
+### Credits
+
 - [StephenGrider/ReduxSimpleStarter](https://github.com/StephenGrider/ReduxSimpleStarter) for the skeleton
 - [sarcadass/granim.js](https://github.com/sarcadass/granim.js)
 - [cicciosgamino/openweather-apis](https://www.npmjs.com/package/openweather-apis)
