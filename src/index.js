@@ -6,6 +6,7 @@ import weather from 'openweather-apis';
 //Components
 import SearchBar from "./components/SearchBar";
 import SearchResult from "./components/SearchResult";
+import WeatherDetails from './components/WeatherDetails';
 
 const APP_KEY = "aba1aa82597e5ab96cffc6bf167bc556";
 
@@ -14,47 +15,41 @@ class App extends Component{
         super(props);
         this.state={
             weatherData:null,
-            placeData: null,
-            currentPlace:{
-                name:null,
-                lat: null,
-                lon: null,
-                country: null
-            }
-
+            placeData: [],
         };
-        this.placeSearch("dhaka");
+        this.getWeatherOf({lat: 23.76, lon: 90.38}); //DHAKA
     }
 
     placeSearch(term){
-        fetch(`https://nominatim.openstreetmap.org/search?q=${term}&format=json&addressdetails=1`)
+        fetch(`https://nominatim.openstreetmap.org/search?q=${term}&format=json&limit=5`)
             .then(res => res.json())
             .then(resp => {
-                console.log(resp);
+                console.log("Places are",resp);
                 this.setState({
                     placeData:resp
                 });
-            })
-        // nominatim.search({ q: 'Adela'}, function(err, opts, results) {
-        //     console.log(results);
-        // });
+            });
     }
 
-    getWeatherOf(lat, lon){
+    getWeatherOf(place){
+
+        const lat = place.lat;
+        const lon = place.lon;
         weather.setCoordinate(lat, lon);
         weather.setUnits('metric');
         weather.setAPPID(APP_KEY);
-        weather.getAllWeather((error, data) => {
-            console.log(data);
-            this.setState({weatherData})
+        weather.getAllWeather((error, weatherData) => {
+            this.setState({weatherData,placeData: []});
         });
     }
 
     render() {
+        const placeSearch = _.debounce(term => this.placeSearch(term), 500 );
         return (
             <div>
-            <SearchBar />
-            <SearchResult />
+                <SearchBar onSearchInput={term => placeSearch(term)} />
+                <SearchResult onPlaceSelect={place => this.getWeatherOf(place)} places={this.state.placeData} />
+                <WeatherDetails weatherData={this.state.weatherData} />
             </div>
         );
     }
@@ -65,4 +60,4 @@ class App extends Component{
 ReactDOM.render(
     <App />,
     document.querySelector(".app")
-)
+);

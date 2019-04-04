@@ -1,0 +1,82 @@
+body {
+    background: linear-gradient(180deg, #2af598 0%, #009efd 100%)  no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.card.text-center {
+    max-width: 400px;
+}
+
+.weatherDetails {
+    position: absolute;
+    text-align: center;
+    max-width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+img.weather-image {
+    width: 25px;
+    vertical-align: top;
+}
+
+h1 span {color: #1ed0c6;}
+
+.wb-desc {
+    white-space: nowrap;
+    color: #03a3f7;
+}
+
+.weather-block {
+    border: 1px solid #f5f5f5;
+    border-bottom: none;
+    border-left: none;
+}
+
+
+.card-body {
+    padding-bottom: 0;
+}
+
+p.wb-desc {}
+
+h3.wb-value {
+    color: #313131;
+}
+
+.wb-icon {
+    color: #1ed0c6;
+}
+.searchbar-ico, .searchbar-input {
+    display: inline-block;
+}
+
+.searchbar {
+    margin-top: 10%;
+    width: 100%;
+    text-align: center;
+}
+
+input.searchbar-input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #e0e0e0;
+    width: 40%;
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+input.searchbar-input::placeholder {
+    color: #fcfcfc;
+}
+
+.searchbar-ico {
+    font-size: 2rem;
+    color: #fcfcfc;
+    margin-right: 1rem;
+}
+
+.searchResults {max-width: 45%;position: absolute;z-index: 1;left: 50%;transform: translateX(-50%);box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);}

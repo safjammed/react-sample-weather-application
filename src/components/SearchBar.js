@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 class SearchBar extends Component{
     constructor(props) {
@@ -10,10 +12,11 @@ class SearchBar extends Component{
     
     render() {
         return (
-            <div>
+            <div className='searchbar'>
+                <FontAwesomeIcon icon={faSearch} className={'searchbar-ico'} />
                 <input
                     placeholder={"New York, US"}
-                    className={"form-control"}
+                    className={"searchbar-input"}
                     value={this.state.term}
                     onChange={event => this.onChangeInput(event.target.value)}
                 />
