@@ -1,6 +1,8 @@
 # react-sample-weather-application
 
-A weather app made with react
+![Annotation 2019-04-04 194538](https://user-images.githubusercontent.com/14005698/55560607-63637100-5712-11e9-86c0-e5623519ae93.png)
+
+A weather app made with react, OpenWeatherApi and OpenStreetmap Nominatim Api
 
 
 
